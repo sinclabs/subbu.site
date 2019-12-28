@@ -28,8 +28,8 @@ const NameWrapper = styled.div`
         bottom  : 0;
         height  : 100%;
         width   : 96%;
-        border-bottom: 2px solid black;
-        border-top: 2px solid black;
+        border-bottom: 3px solid black;
+        border-top: 3px solid black;
     }
 `
 
