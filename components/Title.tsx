@@ -1,6 +1,5 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { Row, Col } from 'react-styled-flexboxgrid'
 
 type Props = {
   firstName?: string
@@ -12,14 +11,18 @@ type Props = {
 
 const NameWrapper = styled.div`
     @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,400i&display=swap');
-    @import url('/fonts/basictitlefont.ttf');
-    font-family: "basic title font";
-    transform: skew(0deg, -7deg);
-    font-size: 5em;
+    @font-face{ 
+        font-family: 'basictitlefont';
+        src: url('/fonts/basictitlefont/basictitlefont-webfont.woff') format('woff');
+    }
+
+    font-family: "basictitlefont";
+    font-size: 8vw;
     margin: auto;
-    margin-top: 50pt;
+    margin-top: 100pt;
     width: fit-content;
     position: relative;
+    transform: skew(0deg, -7deg);
 
     div:before {
         content : "";
@@ -35,7 +38,6 @@ const NameWrapper = styled.div`
 
 const NameContainer = styled.div`
     display: inline-block;
-    padding-top: 20px;
 `
 
 const FirstName = styled.span`
@@ -45,20 +47,20 @@ const FirstName = styled.span`
 
 const LastName = styled.span`
     margin: auto;
-    font-weight: 400;
+    font-weight: 600;
 `
 
 const TopTitle = styled.span`
     position: absolute;
     font-size: 0.485em;
-    top: -1em;
+    top: -1.25em;
     left: 1.5%;
     letter-spacing: 5px;
 `
 const BottomTitle = styled.span`
     position: absolute;
     font-size: 0.485em;
-    bottom: -1.25em;
+    bottom: -1em;
     right: 1.5%;
     letter-spacing: 5px;
 `
@@ -70,18 +72,14 @@ const Title: React.FunctionComponent<Props> = ({
     topTitle = 'Software Engineer',
     bottomTitle = 'Interaction Designer',
   }) => (
-    <Row center='lg'>
-        <Col xs={12}>
-            <NameWrapper>
-                <TopTitle>{topTitle}</TopTitle>
-                <NameContainer>
-                    <FirstName>{firstName}</FirstName>
-                    <LastName>{` ${lastName}`}</LastName>
-                </NameContainer>
-                <BottomTitle>{bottomTitle}</BottomTitle>
-            </NameWrapper>
-        </Col>
-    </Row>
+    <NameWrapper>
+        <TopTitle>{topTitle}</TopTitle>
+        <NameContainer>
+            <FirstName>{firstName}</FirstName>
+            <LastName>{` ${lastName}`}</LastName>
+        </NameContainer>
+        <BottomTitle>{bottomTitle}</BottomTitle>
+    </NameWrapper>
   )
 
   export default Title

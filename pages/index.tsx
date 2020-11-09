@@ -8,7 +8,7 @@ const IndexPage: NextPage = () => {
   return (
     <Layout title="Subbu">
       <Title />
-      <ContactLine />
+      {/* <ContactLine /> */}
     </Layout>
   )
 }
