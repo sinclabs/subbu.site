@@ -8,6 +8,10 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@expo/vector-icons": "^10.2.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.12",
     "@types/styled-components": "^4.4.1",
     "isomorphic-unfetch": "3.0.0",
     "next": "latest",
