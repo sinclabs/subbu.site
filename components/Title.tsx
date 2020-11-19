@@ -21,7 +21,6 @@ const NameWrapper = styled.div`
     margin: auto;
     margin-top: 100pt;
     width: fit-content;
-    position: relative;
     transform: skew(0deg, -7deg);
 
     div:before {
@@ -57,6 +56,7 @@ const TopTitle = styled.span`
     left: 1.5%;
     letter-spacing: 5px;
 `
+
 const BottomTitle = styled.span`
     position: absolute;
     font-size: 0.485em;
@@ -82,4 +82,4 @@ const Title: React.FunctionComponent<Props> = ({
     </NameWrapper>
   )
 
-  export default Title
+export default Title

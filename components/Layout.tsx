@@ -1,13 +1,20 @@
 import * as React from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
+import { createGlobalStyle } from "styled-components"
 
 type Props = {
   title?: string
 }
 
 const WrapperDiv = styled.div`
-  position: relative
+  position: relative;
+`
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    overflow-x: hidden;
+  }
 `
 
 const Layout: React.FunctionComponent<Props> = ({
@@ -18,8 +25,9 @@ const Layout: React.FunctionComponent<Props> = ({
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />      
     </Head>
+      <GlobalStyle />
       {children}
   </WrapperDiv>
 )
