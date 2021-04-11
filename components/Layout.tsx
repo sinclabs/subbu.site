@@ -8,12 +8,17 @@ type Props = {
 }
 
 const WrapperDiv = styled.div`
-  position: relative;
+  display: grid;
+  place-items: center;
+  width: calc(100vw - 20px);
+  height: calc(100vh - 20px);
 `
 
 const GlobalStyle = createGlobalStyle`
   body {
     overflow-x: hidden;
+    border: 10px solid black;
+    margin: 0;
   }
 `
 
