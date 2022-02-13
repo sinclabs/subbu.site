@@ -1,12 +1,14 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
+import { mediaQuerySizes } from '../utils/constants'
+
 type Props = {
-  firstName?: string
-  lastName?: string
-  nickName?: string
-  topTitle?: string
-  bottomTitle?: string
+    firstName?: string
+    lastName?: string
+    nickName?: string
+    topTitle?: string
+    bottomTitle?: string
 }
 
 const NameWrapper = styled.div`
@@ -15,28 +17,29 @@ const NameWrapper = styled.div`
         font-family: 'basictitlefont';
         src: url('/fonts/basictitlefont/basictitlefont-webfont.woff') format('woff');
     }
-
-    font-family: "basictitlefont";
-    font-size: 8vw;
+    font-family: "basictitlefont", sans-serif;
+    font-size: max(8vw, 1em);
     margin: auto;
-    margin-top: 100pt;
     width: fit-content;
+    margin-bottom: 50px;
     transform: skew(0deg, -7deg);
+    display: flex;
+    flex-direction: column;
 
-    div:before {
-        content : "";
-        position: absolute;
-        left    : 2%;
-        bottom  : 0;
-        height  : 100%;
-        width   : 96%;
-        border-bottom: 3px solid black;
-        border-top: 3px solid black;
+    @media (max-width: ${mediaQuerySizes.mobileL}) {
+        font-size: max(9.5vw, 1em);
     }
 `
 
 const NameContainer = styled.div`
     display: inline-block;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+
+    @media (max-width: ${mediaQuerySizes.mobileL}) {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
 `
 
 const FirstName = styled.span`
@@ -50,19 +53,24 @@ const LastName = styled.span`
 `
 
 const TopTitle = styled.span`
-    position: absolute;
-    font-size: 0.485em;
-    top: -1.25em;
-    left: 1.5%;
+    font-size: max(4vw, 0.5em);
     letter-spacing: 5px;
+
+    @media (max-width: ${mediaQuerySizes.mobileL}) {
+        font-size: max(5vw, 0.5em);
+        letter-spacing: 3px;
+    }
 `
 
 const BottomTitle = styled.span`
-    position: absolute;
-    font-size: 0.485em;
-    bottom: -1em;
-    right: 1.5%;
+    align-self: flex-end;
+    font-size: max(4vw, 0.5em);
     letter-spacing: 5px;
+
+    @media (max-width: ${mediaQuerySizes.mobileL}) {
+        font-size: max(5vw, 0.5em);
+        letter-spacing: 3px;
+    }
 `
 
 const Title: React.FunctionComponent<Props> = ({
@@ -71,7 +79,7 @@ const Title: React.FunctionComponent<Props> = ({
     // nickName = 'Subbu',
     topTitle = 'Software Engineer',
     bottomTitle = 'Interaction Designer',
-  }) => (
+}) => (
     <NameWrapper>
         <TopTitle>{topTitle}</TopTitle>
         <NameContainer>
@@ -80,6 +88,6 @@ const Title: React.FunctionComponent<Props> = ({
         </NameContainer>
         <BottomTitle>{bottomTitle}</BottomTitle>
     </NameWrapper>
-  )
+)
 
 export default Title

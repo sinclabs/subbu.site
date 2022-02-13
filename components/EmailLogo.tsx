@@ -2,8 +2,6 @@ import React from 'react'
 
 export const EmailLogo = () => (
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-        width="18pt"
-        height="18pt"
         viewBox="0 0 512 512">
         <g>
             <g>

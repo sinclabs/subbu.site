@@ -6,23 +6,32 @@ import Layout from '../components/Layout'
 import Title from '../components/Title'
 import ContactLine from '../components/ContactLine'
 
-const CenterdTitleContainer = styled.div`
-  margin: 0;
+const TitlePageContainer = styled.div`
   width: 100vw;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, 50%);
-  transform: translate(-50%, 50%);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
+const CenterdTitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 const IndexPage: NextPage = () => {
   return (
-    <Layout title="Subbu">
-      <CenterdTitleContainer>
-        <Title />
-        <ContactLine />
-      </CenterdTitleContainer>
+    <Layout title="👋 Hello - Subbu">
+      <TitlePageContainer>
+        <CenterdTitleContainer>
+          <Title />
+          <ContactLine />
+        </CenterdTitleContainer>
+      </TitlePageContainer>
     </Layout>
   )
 }
