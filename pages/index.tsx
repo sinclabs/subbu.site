@@ -1,10 +1,11 @@
-import * as React from 'react'
-import { NextPage } from 'next'
-import styled from 'styled-components'
+import * as React from "react"
+import { NextPage } from "next"
+import styled from "styled-components"
+import { Center, Container } from "@mantine/core"
 
-import Layout from '../components/Layout'
-import Title from '../components/Title'
-import ContactLine from '../components/ContactLine'
+import Layout from "../components/Layout"
+import Title from "../components/Title"
+import ContactLine from "../components/ContactLine"
 
 const TitlePageContainer = styled.div`
   width: 100vw;
@@ -26,12 +27,14 @@ const CenterdTitleContainer = styled.div`
 const IndexPage: NextPage = () => {
   return (
     <Layout title="👋 Hello - Subbu">
-      <TitlePageContainer>
-        <CenterdTitleContainer>
-          <Title />
-          <ContactLine />
-        </CenterdTitleContainer>
-      </TitlePageContainer>
+      <Container>
+        <Center>
+          <div>
+            <Title />
+            <ContactLine />
+          </div>
+        </Center>
+      </Container>
     </Layout>
   )
 }
